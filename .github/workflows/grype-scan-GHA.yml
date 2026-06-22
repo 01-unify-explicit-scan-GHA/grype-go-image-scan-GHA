@@ -4,8 +4,8 @@ on:
     push:
      branches:
       - main
-   schedule:
-      - cron: 15 23 * * 1-5 //Runs on every week Monday to Friday
+    schedule:
+      - cron: 15 23 * * 1-5
       
     workflow_dispatch:
 
