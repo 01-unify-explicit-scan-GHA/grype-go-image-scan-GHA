@@ -5,7 +5,7 @@ on:
      branches:
       - main
    schedule:
-      - cron: 15 22 * * 1-5 // Runs on every week Monday to Friday
+      - cron: 15 23 * * 1-5 //Runs on every week Monday to Friday
       
     workflow_dispatch:
 
