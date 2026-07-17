@@ -32,12 +32,11 @@ jobs:
           docker save -o output.tar go-app
           tar -tf output.tar
 
-      - name: Clear Grype cache
-        run: rm -rf $HOME/.cache/grype
-
       - id: grype-step
         name: Grype scan
         uses: cloudbees-io-gha/grype-scan-publish@v1
+        env:
+          GRYPE_DB_CACHE_DIR: /tmp/grype-db-${{ github.run_id }}
         with:
           binary-tar-path: output.tar
           cloudbees-url: https://api.saas-qa.beescloud.com
